@@ -18,9 +18,9 @@ playbook: site.yml
   play #3 (kibana): Install Kibana      TAGS: []
       TASK TAGS: [kibana]
   ```
-  all - таски для всех хостов.  
-  elasticsearch - таски для установки elasticsearch.  
-  kibana - таски для установки kibana.  
+  Тег all - таски для всех хостов.  
+  Тег elasticsearch - таски для установки elasticsearch.  
+  Тег kibana - таски для установки kibana.  
   Переменные плейбука:  
   java_jdk_version - версия java. (11.0.12).   
   java_oracle_jdk_package - файл для установки(имя). ("jdk-{{ java_jdk_version }}_linux-x64_bin.tar.gz")  
