@@ -67,11 +67,29 @@
 
 P.S.: количество собираемых метрик должно быть не менее 4-х.
 P.P.S.: по желанию можно себя не ограничивать только сбором метрик из `/proc`.
+```
+#!/usr/bin/env python3
 
----
+import os
+import json
+import psutil
+from datetime import tzinfo, timedelta, datetime
 
-### Как оформить ДЗ?
+log_file_name = '/var/log/'+str(datetime.now().strftime("%y-%m-%d-awesome-monitoring.log"))
+timestamp = (datetime.now() - datetime(1970, 1, 1)) / timedelta(seconds=1)
 
-Выполненное домашнее задание пришлите ссылкой на .md-файл в вашем репозитории.
-
+if not os.path.isfile(log_file_name):
+    with open(log_file_name, 'w+') as file:
+        file.write('')
+else:
+    with open(log_file_name, 'a') as file:
+        json.dump({
+        "Timestamp":timestamp,
+        "CPU Load":psutil.cpu_percent(),
+        "Load Average":psutil.getloadavg(),
+        "Root fs free space":psutil.disk_usage('/').free,
+        "Memory available":psutil.virtual_memory().available,
+        "Swap Free":psutil.swap_memory().free
+        }, file)
+```
 ---
