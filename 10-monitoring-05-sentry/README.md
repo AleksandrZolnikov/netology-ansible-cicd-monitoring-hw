@@ -69,7 +69,7 @@ import os
 import socket
 import sentry_sdk
 sentry_sdk.init(
-    "https://a366f25da9a8444da024c732da45fff4@o1075858.ingest.sentry.io/6076892",
+    "https://many_digits_and_letters@digits.ingest.sentry.io/6076892",
 
     # Set traces_sample_rate to 1.0 to capture 100%
     # of transactions for performance monitoring.
