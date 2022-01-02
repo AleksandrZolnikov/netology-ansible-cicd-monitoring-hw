@@ -5,7 +5,7 @@
 Разворачиваются 3 машинки в ЯОблаке: TeamCity-Server, TeamCity-agent и Nexus.  
 TeamCity-server и TeamCity-agent разворачиваются на COI образах, на них заливается докер образы и запускаются  
 соотв. контейнеры(после отработки терраформа нужно немного ~2 мин. подождать).  
-В TeamCity-agent в образ прокидывается переменная SERVER_URL с адресом TeamCity-server.  
+В TeamCity-agent в контейнер прокидывается переменная SERVER_URL с адресом и портом TeamCity-server.  
 Процесс:
 ```
 terraform plan
